@@ -1,0 +1,33 @@
+{
+  "name": "look-for-github-profile-step",
+  "version": "1.0.0",
+  "description": "Parse the resume using Amazon Textract and find the GitHub profile",
+  "main": "main.js",
+  "scripts": {
+    "start": "claudia create --region us-east-1 --no-optional-dependencies --handler pub/bundle.handler --runtime nodejs18.x --memory 1024 --arch arm64",
+    "deploy": "claudia update --no-optional-dependencies --handler pub/bundle.handler",
+    "bundle": "webpack",
+    "test": "claudia test-lambda --event event.json",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com"
+  },
+  "keywords": [
+    "Node",
+    "AWS",
+    "Step Functions",
+    "Serverless"
+  ],
+  "author": "C R",
+  "license": "ISC",
+  "devDependencies": {
+    "claudia": "^5.14.1",
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "optionalDependencies": {
+    "@aws-sdk/client-textract": "^3.369.0"
+  }
+}

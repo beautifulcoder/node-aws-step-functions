@@ -1,0 +1,28 @@
+{
+  "Comment": "Resume Uploader State Machine",
+  "StartAt": "UploadResume",
+  "States": {
+    "UploadResume": {
+      "Type": "Task",
+      "Resource": "{UploadResume.Arn}",
+      "Next": "LookForGithubProfile"
+    },
+    "LookForGithubProfile": {
+      "Type": "Task",
+      "Resource": "{LookForGithubProfile.Arn}",
+      "Next": "QueueResume"
+    },
+    "QueueResume": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::sqs:sendMessage",
+      "Parameters": {
+        "QueueUrl": "{Sqs.Url}",
+        "MessageBody": {
+          "storedFileUrl.$": "$.storedFileUrl",
+          "githubProfileUrl.$": "$.githubProfileUrl"
+        }
+      },
+      "End": true
+    }
+  }
+}
