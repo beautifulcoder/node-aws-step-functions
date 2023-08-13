@@ -1,0 +1,42 @@
+{
+  "name": "resume-uploader-api",
+  "version": "1.0.0",
+  "description": "Resume API for real time consumption without blocking",
+  "main": "web.js",
+  "scripts": {
+    "start": "claudia create --region us-east-1 --no-optional-dependencies --api-module pub/bundle --runtime nodejs18.x --memory 1536 --arch arm64",
+    "deploy": "claudia update --no-optional-dependencies",
+    "bundle": "webpack",
+    "lint": "eslint ."
+  },
+  "eslintIgnore": [
+    "pub/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beautifulcoder/net-aws-step-functions.git"
+  },
+  "keywords": [
+    "Node",
+    "AWS",
+    "Step Functions",
+    "Serverless"
+  ],
+  "author": "C R",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beautifulcoder/net-aws-step-functions/issues"
+  },
+  "homepage": "https://github.com/beautifulcoder/net-aws-step-functions#readme",
+  "devDependencies": {
+    "claudia": "^5.14.1",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "optionalDependencies": {
+    "@aws-sdk/client-s3": "^3.387.0",
+    "@aws-sdk/client-sfn": "^3.387.0",
+    "@aws-sdk/client-sqs": "^3.388.0",
+    "claudia-api-builder": "^4.1.2"
+  }
+}

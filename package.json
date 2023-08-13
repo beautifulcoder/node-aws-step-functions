@@ -5,6 +5,9 @@
   "scripts": {
     "test": "eslint ."
   },
+  "eslintIgnore": [
+    "pub/"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com"

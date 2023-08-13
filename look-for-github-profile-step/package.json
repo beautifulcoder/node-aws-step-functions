@@ -10,6 +10,9 @@
     "test": "claudia test-lambda --event event.json",
     "lint": "eslint ."
   },
+  "eslintIgnore": [
+    "pub/"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/beautifulcoder/net-aws-step-functions.git"
@@ -22,6 +25,10 @@
   ],
   "author": "C R",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beautifulcoder/net-aws-step-functions/issues"
+  },
+  "homepage": "https://github.com/beautifulcoder/net-aws-step-functions#readme",
   "devDependencies": {
     "claudia": "^5.14.1",
     "webpack": "^5.88.1",
